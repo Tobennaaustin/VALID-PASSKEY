@@ -43,5 +43,6 @@ function checkPasswordStrength() {
         });
     } else {
       passwordStrengthText.textContent = 'Password is not strong enough. Please choose a stronger password.';
+      passwordStrengthText.style.color = 'red';
     }
   }
