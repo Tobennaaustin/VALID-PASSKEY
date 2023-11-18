@@ -28,13 +28,14 @@ function checkPasswordStrength() {
     const password = passwordInput.value;
     const result = zxcvbn(password);
 
-    if (result.score >= 3) { // Adjust the score threshold as needed
+    if (result.score >= 4) { // Adjust the score threshold as needed
       navigator.clipboard.writeText(password)
         .then(() => {
           passwordStrengthText.textContent = 'Copied';
+          passwordStrengthText.style.color = 'green';
           setTimeout(() => {
             passwordStrengthText.textContent = '';
-          }, 3000); // Clear the message after 3 seconds
+          }, 2000); // Clear the message after 3 seconds
         })
         .catch((error) => {
           console.error('Unable to copy to clipboard', error);
